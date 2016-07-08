@@ -23,7 +23,7 @@ output3.rename(columns={'predicted':'pred3'},inplace=True)
 
 output['inspectieAdvies']='nee'
 adviceCheck=((output.probability<=0.5) & (output.distance>=3)) | (output.probability<=0.35) | (output.distance>10)# | (output.diff==True)
-output.inspectieAdvies[adviceCheck]='ja'
+output.inspectieAdvies[adviceCheck]='ja' # this was kind of random. first step to estimate of where it could be wrong
 
 output.drop('probability',axis=1,inplace=True)
 output.drop('distance',axis=1,inplace=True)
